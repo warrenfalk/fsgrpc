@@ -40,7 +40,7 @@ jobs:
         env:
           FSGRPC_VERSION: ${{github.ref_name}}
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-        run: dotnet nuget push bin/Release/FsGrpc.${FSGRPC_VERSION#v}.nupkg --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push bin/Release/FsGrpc.${FSGRPC_VERSION#v}.nupkg --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
       - name: GitHubRelease
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
