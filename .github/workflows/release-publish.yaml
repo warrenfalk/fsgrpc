@@ -53,7 +53,7 @@ jobs:
           username: notused
           password: ${{ secrets.BUF_TOKEN }}
       - name: Buf Plugin Push
-        uses: actions/build-and-push-docker-images@v3
+        uses: docker/build-push-action@v3
         with:
           file: Dockerfile.plugin
           push: true
