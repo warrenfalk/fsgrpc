@@ -15,6 +15,7 @@ version: v1
 plugins:
   - remote: buf.build/divisions-maintenance-group/plugins/fsharp
     out: gen
+	strategy: all
 ```
 
 Using `buf generate` with the above example will generate .fs files in the "gen" directory, and also a Protobuf.targets file in that directory which includes those files in correct dependency order.
